@@ -1,0 +1,59 @@
+#include <iostream>
+using namespace std;
+class Time
+{
+    inthrs, min;
+
+public:
+    Time(inth, intm)
+    {
+        hrs = h;
+        min = m;
+    }
+    Time()
+    {
+        cout << "\n Time's Object Created";
+    }
+
+    intgetMinutes()
+    {
+        inttot_min = (hrs * 60) + min;
+        return tot_min;
+    }
+
+    int display()
+    {
+        cout << "Hours: " << hrs << endl;
+        cout << " Minutes : " << min << endl;
+    }
+};
+class Minute
+{
+    intmin;
+
+public:
+    Minute()
+    {
+        min = 0;
+    }
+    int operator=(Time T)
+    {
+        min = T.getMinutes();
+    }
+    int display()
+    {
+        cout << "\n Total Minutes : " << min << endl;
+    }
+};
+
+intmain()
+{
+    Time t1(2, 30);
+    t1.display();
+    Minute m1;
+    m1.display();
+    m1 = t1; // conversion from Time to Minute
+    t1.display();
+    m1.display();
+    return 0;
+}
